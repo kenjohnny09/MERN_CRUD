@@ -7,7 +7,7 @@ const Item = require('../../models/Item');
 // @route GET api/items
 // @desc Get All Items
 // @access Public
-router.get('/', (req, res) => {
+router.get('/items', (req, res) => {
     Item.find()
      .sort({ date: -1})
      .then(items => res.json(items));
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 // @route POST api/items
 // @desc Create A Post
 // @access Public
-router.post('/', (req, res) => {
+router.post('/items', (req, res) => {
     const newItem = new Item({
         name: req.body.name
     });
